@@ -94,10 +94,3 @@ npm start
 4. View analysis results
 5. Export as JSON
 
-## Author
-
-Submission for MERN Stack Interview Assessment
-
-## License
-
-MIT

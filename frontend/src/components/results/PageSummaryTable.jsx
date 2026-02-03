@@ -21,7 +21,7 @@ const PageSummaryTable = ({ pageSummary }) => {
                     Printed Page
                   </th>
                   <th className="px-4 sm:px-6 py-4 text-left text-xs font-bold text-slate-700 uppercase tracking-wider">
-                    Question Range
+                    Questions
                   </th>
                   <th className="px-4 sm:px-6 py-4 text-left text-xs font-bold text-slate-700 uppercase tracking-wider hidden sm:table-cell">
                     Status
@@ -52,11 +52,18 @@ const PageSummaryTable = ({ pageSummary }) => {
                           </span>
                         )}
                       </td>
-                      <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm">
+                      <td className="px-4 sm:px-6 py-4 text-sm">
                         {hasQuestions ? (
-                          <span className="px-3 py-1.5 bg-gradient-to-r from-green-100 to-green-50 text-green-700 rounded-lg font-bold border border-green-300">
-                            Q{page.range}
-                          </span>
+                          <div className="flex flex-wrap gap-2">
+                            {page.questionStarts?.map((qNum, qIdx) => (
+                              <span 
+                                key={qIdx}
+                                className="px-2.5 py-1 bg-gradient-to-r from-green-100 to-green-50 text-green-700 rounded-md font-bold text-xs border border-green-300"
+                              >
+                                Q{qNum}
+                              </span>
+                            ))}
+                          </div>
                         ) : (
                           <span className="text-slate-400 font-semibold italic">No questions</span>
                         )}

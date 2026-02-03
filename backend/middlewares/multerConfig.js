@@ -3,13 +3,23 @@ import path from 'path';
 import fs from 'fs';
 import { config } from '../config/index.js';
 import os from 'os';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Use /tmp for Vercel or system temp directory
-const uploadDir = process.env.VERCEL ? '/tmp' : config.uploadDir;
+const uploadDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, '..', config.uploadDir);
 
 // Ensure upload directory exists
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log(`Upload directory created: ${uploadDir}`);
+  }
+} catch (error) {
+  console.error('Error creating upload directory:', error);
 }
 
 const storage = multer.diskStorage({

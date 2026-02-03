@@ -1,0 +1,7 @@
+node_modules
+.git
+.env
+frontend
+uploads
+*.docx
+README.md

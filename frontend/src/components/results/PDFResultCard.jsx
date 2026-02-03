@@ -31,13 +31,6 @@ const PDFResultCard = ({ result, index }) => {
                 <span className="text-slate-600 font-medium">Total Pages:</span>
                 <span className="font-bold text-primary-700 text-base">{result.totalPages}</span>
               </div>
-              
-              {hasIssues && (
-                <div className="flex items-center gap-2 text-amber-600">
-                  <AlertTriangle className="w-4 h-4" />
-                  <span className="font-semibold">Needs Review</span>
-                </div>
-              )}
             </div>
 
             <div className="mt-3 flex flex-wrap gap-2.5">
@@ -45,7 +38,7 @@ const PDFResultCard = ({ result, index }) => {
                 📄 {result.printedPageSequence?.filter(p => p !== null).length || 0} Pages Numbered
               </div>
               <div className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 text-green-700 rounded-lg text-sm font-semibold border border-green-200">
-                ✓ {result.pageSummary?.filter(p => p.range !== null).length || 0} With Questions
+                {result.pageSummary?.filter(p => p.range !== null).length || 0} With Questions
               </div>
             </div>
           </div>

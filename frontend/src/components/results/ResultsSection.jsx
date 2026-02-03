@@ -20,7 +20,7 @@ const ResultsSection = ({ results, onReset }) => {
       <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-slate-800 to-primary-700 bg-clip-text text-transparent mb-2">
-            Analysis Complete ✓
+            Analysis Complete
           </h2>
           <p className="text-base sm:text-lg text-slate-600">
             Successfully processed <span className="font-bold text-primary-700">{results?.results?.length || 0}</span> document{results?.results?.length !== 1 ? 's' : ''}

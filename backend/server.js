@@ -20,9 +20,11 @@ if (config.nodeEnv === 'development') {
   };
 }
 
-// Ensure upload directory exists
-if (!fs.existsSync(config.uploadDir)) {
-  fs.mkdirSync(config.uploadDir, { recursive: true });
+// Ensure upload directory exists (skip in production/serverless)
+if (config.nodeEnv !== 'production') {
+  if (!fs.existsSync(config.uploadDir)) {
+    fs.mkdirSync(config.uploadDir, { recursive: true });
+  }
 }
 
 // Start server

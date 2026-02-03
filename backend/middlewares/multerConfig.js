@@ -34,7 +34,10 @@ const storage = multer.diskStorage({
 
 export const upload = multer({
   storage,
-  limits: { fileSize: config.maxFileSize },
+  limits: { 
+    fileSize: 10 * 1024 * 1024, // 10MB max per file
+    files: 10 // Max 10 files
+  },
   fileFilter: (req, file, cb) => {
     if (file.mimetype === 'application/pdf') {
       cb(null, true);

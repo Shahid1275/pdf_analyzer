@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+  "functions": {
+    "server.js": {
+      "maxDuration": 60,
+      "memory": 3008,
+      "maxRequestBodySize": "10mb"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
@@ -16,12 +14,6 @@
       "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     }
   ],
-  "functions": {
-    "server.js": {
-      "maxDuration": 60,
-      "memory": 3008
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }

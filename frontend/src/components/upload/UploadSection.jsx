@@ -70,10 +70,10 @@ const UploadSection = ({ onAnalysisComplete, isLoading, setIsLoading }) => {
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-primary-700 to-slate-600 bg-clip-text text-transparent leading-tight">
-          Transform Your PDF Analysis
+          Map Questions in Your PDFs
         </h2>
         <p className="text-slate-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-          Upload your PDF documents and get instant insights on page numbers, question ranges, and document structure with precision accuracy
+          Upload exam PDFs and get instant mapping of page numbers, question ranges, and document structure with precision accuracy
         </p>
       </div>
 

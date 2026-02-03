@@ -1,6 +1,6 @@
-# PDF Analyzer Frontend
+# PDF Question Mapper
 
-A modern, professional React + Vite application for analyzing PDF documents.
+A modern, professional React + Vite application for analyzing PDF documents and mapping questions.
 
 ## Features
 

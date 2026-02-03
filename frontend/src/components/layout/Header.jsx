@@ -11,10 +11,10 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary-700 to-primary-900 bg-clip-text text-transparent">
-                PDF Analyzer Pro
+                PDF Question Mapper
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 hidden sm:block">
-                Smart Document Intelligence Platform
+                Intelligent PDF Analysis & Question Mapping
               </p>
             </div>
           </div>

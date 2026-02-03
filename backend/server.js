@@ -20,13 +20,6 @@ if (config.nodeEnv === 'development') {
   };
 }
 
-// Ensure upload directory exists (skip in production/serverless)
-if (config.nodeEnv !== 'production') {
-  if (!fs.existsSync(config.uploadDir)) {
-    fs.mkdirSync(config.uploadDir, { recursive: true });
-  }
-}
-
 // Start server
 const server = app.listen(config.port, () => {
   console.log(`Server running in ${config.nodeEnv} mode on port ${config.port}`);

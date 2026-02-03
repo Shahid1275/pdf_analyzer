@@ -11,7 +11,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
   'http://localhost:5173',
-  'https://pdf-analyzer-six.vercel.app',
+  'https://pdf-analyzer-new-app.vercel.app',
   config.corsOrigin
 ].filter(Boolean);
 

@@ -70,7 +70,7 @@ const PDFResultCard = ({ result, index }) => {
                       : 'bg-slate-50 text-slate-700 border-2 border-slate-300 hover:border-primary-400 hover:shadow-md'
                   }`}
                 >
-                  {page === null ? '❌ No Page #' : `📄 ${page}`}
+                  {page === null ? 'No Page #' : `📄 ${page}`}
                 </div>
               ))}
             </div>

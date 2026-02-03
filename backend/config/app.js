@@ -6,25 +6,12 @@ import { errorHandler } from '../middlewares/errorHandler.js';
 
 const app = express();
 
-// CORS Configuration - Allow multiple origins
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:3001',
-  'http://localhost:5173',
-  'https://pdf-analyzer-new-app.vercel.app',
-  config.corsOrigin
-].filter(Boolean);
-
+// CORS Configuration - Allow all origins for Vercel
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(null, true); // Allow all origins in development
-    }
-  },
-  credentials: true
+  origin: '*',
+  credentials: false,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());

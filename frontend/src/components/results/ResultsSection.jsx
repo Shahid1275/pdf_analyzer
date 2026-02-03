@@ -17,13 +17,13 @@ const ResultsSection = ({ results, onReset }) => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-2">
-            Analysis Results
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-slate-800 to-primary-700 bg-clip-text text-transparent mb-2">
+            Analysis Complete ✓
           </h2>
-          <p className="text-slate-600">
-            {results?.results?.length || 0} PDF{results?.results?.length !== 1 ? 's' : ''} analyzed successfully
+          <p className="text-base sm:text-lg text-slate-600">
+            Successfully processed <span className="font-bold text-primary-700">{results?.results?.length || 0}</span> document{results?.results?.length !== 1 ? 's' : ''}
           </p>
         </div>
         

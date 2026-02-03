@@ -68,12 +68,12 @@ const UploadSection = ({ onAnalysisComplete, isLoading, setIsLoading }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-          Analyze Your PDF Documents
+      <div className="text-center mb-10">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-primary-700 to-slate-600 bg-clip-text text-transparent leading-tight">
+          Transform Your PDF Analysis
         </h2>
-        <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
-          Upload multiple PDF files to extract page numbers and question ranges with precision
+        <p className="text-slate-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+          Upload your PDF documents and get instant insights on page numbers, question ranges, and document structure with precision accuracy
         </p>
       </div>
 
@@ -85,18 +85,26 @@ const UploadSection = ({ onAnalysisComplete, isLoading, setIsLoading }) => {
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
         >
-          <div className="flex flex-col items-center gap-4">
-            <div className="bg-primary-100 p-4 rounded-full">
-              <Upload className="w-10 h-10 sm:w-12 sm:h-12 text-primary-600" />
+          <div className="flex flex-col items-center gap-5">
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary-400 blur-xl opacity-30 rounded-full"></div>
+              <div className="relative bg-gradient-to-br from-primary-500 to-primary-600 p-5 rounded-2xl shadow-lg">
+                <Upload className="w-12 h-12 sm:w-14 sm:h-14 text-white" />
+              </div>
             </div>
             
             <div className="text-center">
-              <p className="text-lg sm:text-xl font-semibold text-slate-700 mb-2">
-                Drop PDF files here or click to browse
+              <p className="text-xl sm:text-2xl font-bold text-slate-800 mb-3">
+                Drop your PDF files here
               </p>
-              <p className="text-sm text-slate-500">
-                Support for multiple files • Maximum 10 files • PDF format only
+              <p className="text-base sm:text-lg text-slate-600 mb-2">
+                or click to browse from your device
               </p>
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+                <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Multi-file support</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Up to 10 files</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">PDF only</span>
+              </div>
             </div>
 
             <input
@@ -190,23 +198,23 @@ const UploadSection = ({ onAnalysisComplete, isLoading, setIsLoading }) => {
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="card text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">📄</div>
-          <h3 className="font-semibold text-slate-700 mb-1">Page Detection</h3>
-          <p className="text-sm text-slate-600">Accurately extract printed page numbers</p>
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="card text-center hover:shadow-2xl transition-shadow duration-300 border border-slate-200">
+          <div className="text-4xl mb-3">📄</div>
+          <h3 className="font-bold text-lg text-slate-800 mb-2">Smart Page Detection</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">Automatically extract and identify printed page numbers with high accuracy</p>
         </div>
         
-        <div className="card text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">🔍</div>
-          <h3 className="font-semibold text-slate-700 mb-1">Question Analysis</h3>
-          <p className="text-sm text-slate-600">Identify question ranges per page</p>
+        <div className="card text-center hover:shadow-2xl transition-shadow duration-300 border border-slate-200">
+          <div className="text-4xl mb-3">🔍</div>
+          <h3 className="font-bold text-lg text-slate-800 mb-2">Question Mapping</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">Detect and map question ranges across all pages instantly</p>
         </div>
         
-        <div className="card text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">⚡</div>
-          <h3 className="font-semibold text-slate-700 mb-1">Fast Processing</h3>
-          <p className="text-sm text-slate-600">Quick and efficient batch analysis</p>
+        <div className="card text-center hover:shadow-2xl transition-shadow duration-300 border border-slate-200">
+          <div className="text-4xl mb-3">⚡</div>
+          <h3 className="font-bold text-lg text-slate-800 mb-2">Lightning Fast</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">Process multiple documents in seconds with our optimized engine</p>
         </div>
       </div>
     </div>
